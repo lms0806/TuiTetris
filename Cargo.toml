@@ -1,0 +1,9 @@
+[package]
+name = "tui_tetris"
+version = "0.1.0"
+edition = "2021"
+
+# plan.md: ossca-2026-rltk 저장소의 rltk(터미널/로그라이크 툴킷) 사용
+[dependencies]
+# crossterm 백엔드는 해당 포크에서 winit API 변경으로 현재 빌드 실패 → opengl 백엔드 사용
+rltk = { git = "https://github.com/utilForever/ossca-2026-rltk", package = "rltk", default-features = false, features = ["opengl"] }
